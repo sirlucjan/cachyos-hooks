@@ -7,16 +7,16 @@ Lsb_release() {
 
     sed -i $file \
         -e 's|^DISTRIB_ID=.*$|DISTRIB_ID=cachyos|' \
-        -e 's|^DISTRIB_DESCRIPTION=.*$|DISTRIB_DESCRIPTION=\"Cachy OS\"|'
+        -e 's|^DISTRIB_DESCRIPTION=.*$|DISTRIB_DESCRIPTION=\"CachyOS\"|'
 }
 
 Os_release() {
-    local file=/usr/lib/os-release
+    local file=/etc/os-release
     local cachyosfile=/usr/lib/cachyos-release
 
     sed -i $file \
         -e 's|^NAME=.*$|NAME=\"CachyOS Linux\"|' \
-        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"CachyOS Linux\"|' \
+        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"CachyOS\"|' \
         -e 's|^ID=.*$|ID=cachyos|' \
         -e 's|^ID_LIKE=.*$|ID_LIKE=arch|' \
         -e 's|^ANSI_COLOR=.*$|ANSI_COLOR=\"38;2;23;147;209\"|' \
@@ -39,7 +39,7 @@ Os_release() {
 }
 
 Issues() {
-    sed -i 's|Arch Linux|Cachy OS Linux|g' /etc/issue /usr/share/factory/etc/issue
+    sed -i 's|Arch Linux|CachyOS Linux|g' /etc/issue /usr/share/factory/etc/issue
 }
 
 Main()
