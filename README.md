@@ -11,4 +11,3 @@ os-release.hook | Runs `cachyos-hooks-runner` after package `filesystem` has bee
 cachyos-reboot-required | Notifies user to reboot after essential system files have been updated.
 cachyos-check-reboot-required | Filters a selection of kernel targets to `cachyos-reboot-required`.
 cachyos-reboot-required.hook | Runs `cachyos-reboot-required` after any listed essential system files have been updated.
-cachyos-nvidia.hook | Avoids black screens after driver updates with `nvidia-drm.modeset=1` enabled.
