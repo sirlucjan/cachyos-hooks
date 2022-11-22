@@ -23,18 +23,6 @@ Main() {
                     break
                 fi
                 ;;
-            nvidia)
-                if [[ "$runningKernel" = "linux" ]] ; then
-                    notify=yes
-                    break
-                fi
-                ;;
-            nvidia-lts)
-                if [[ "$runningKernel" = "linux-lts" ]] ; then
-                    notify=yes
-                    break
-                fi
-                ;;
             btrfs-progs)
                 if [[ -n "$(/usr/bin/df -hT | awk '{print $2}' | grep -w btrfs)" ]] ; then
                     notify=yes
