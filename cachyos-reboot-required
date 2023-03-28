@@ -4,7 +4,7 @@
 
 # Implementation using libnotify.
 
-GetUsers() { /usr/bin/users | sed 's| |\n|g' | sort | uniq ; }
+_get_users() { /usr/bin/users | sed 's| |\n|g' | sort | uniq ; }
 
 _other_reboot_required() {
     local msg="Reboot is recommended due to the upgrade of core system package(s)."
@@ -21,7 +21,7 @@ _other_reboot_required() {
         return
     fi
 
-    for user in $(GetUsers) ; do
+    for user in $(_get_users) ; do
         userid="$(/usr/bin/id -u "$user")"
         cmd=(
             DISPLAY=:0
