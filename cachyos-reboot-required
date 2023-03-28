@@ -16,18 +16,23 @@ _other_reboot_required() {
     # notification
     local user userid cmd
 
+    # Don't call notify-send in tty
+    if [ "$XDG_SESSION_TYPE" == "tty" ]; then
+        return
+    fi
+
     for user in $(GetUsers) ; do
-        userid=$(/usr/bin/id -u $user)
+        userid="$(/usr/bin/id -u "$user")"
         cmd=(
             DISPLAY=:0
-            DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$userid/bus
+            DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${userid}/bus"
             /usr/bin/notify-send
             --icon=system-reboot
             --urgency=critical
             "'$title'"
             "'$msg'"
         )
-        /usr/bin/su $user -c "${cmd[*]}"
+        /usr/bin/su "$user" -c "${cmd[*]}"
     done
 }
 _other_reboot_required
