@@ -17,7 +17,7 @@ _other_reboot_required() {
     local user userid cmd
 
     # Don't call notify-send in tty
-    if [ "$XDG_SESSION_TYPE" == "tty" ]; then
+    if [[ "$(tty)" =~ /dev/tty.* ]]; then
         return
     fi
 
