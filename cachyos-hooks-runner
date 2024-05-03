@@ -22,7 +22,7 @@ Os_release() {
         -e 's|^ANSI_COLOR=.*$|ANSI_COLOR=\"38;2;23;147;209\"|' \
         -e 's|^HOME_URL=.*$|HOME_URL=\"https://cachyos.org/\"|' \
         -e 's|^DOCUMENTATION_URL=.*$|DOCUMENTATION_URL=\"https://wiki.cachyos.org/\"|' \
-        -e 's|^SUPPORT_URL=.*$|SUPPORT_URL=\"https://forum.cachyos.org/\"|' \
+        -e 's|^SUPPORT_URL=.*$|SUPPORT_URL=\"https://discuss.cachyos.org/\"|' \
         -e 's|^BUG_REPORT_URL=.*$|BUG_REPORT_URL=\"https://github.com/cachyos\"|' \
         -e 's|^LOGO=.*$|LOGO=cachyos|'
 
