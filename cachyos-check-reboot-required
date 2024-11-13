@@ -11,14 +11,20 @@ for target in $targets ; do
             notify=yes
             break
             ;;
-        xfs-progs)
+        btrfs-progs)
+            if [ -n "$(mount -t btrfs)" ]; then
+                notify=yes
+                break
+            fi
+            ;;
+        xfsprogs)
             if [ -n "$(mount -t xfs)" ]; then
                 notify=yes
                 break
             fi
             ;;
-        btrfs-progs)
-            if [ -n "$(mount -t btrfs)" ]; then
+        e2fsprogs)
+            if [ -n "$(mount -t ext4)" ]; then
                 notify=yes
                 break
             fi
