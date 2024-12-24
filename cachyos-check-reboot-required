@@ -22,3 +22,5 @@ for target in $targets ; do
         *) _notify ;;
     esac
 done
+
+exit 0
