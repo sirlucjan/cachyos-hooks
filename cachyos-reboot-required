@@ -35,11 +35,11 @@ while read -r target; do
     case "$target" in
         "$kernelname") _notify;;
         btrfs-progs)
-            [ -n "$(mount -t btrfs)" ] && _notify;;
+            [ -n "$(mount -t btrfs)" ] && _notify || : ;;
         xfsprogs)
-            [ -n "$(mount -t xfs)" ] && _notify;;
+            [ -n "$(mount -t xfs)" ] && _notify || : ;;
         e2fsprogs)
-            [ -n "$(mount -t ext4)" ] && _notify;;
+            [ -n "$(mount -t ext4)" ] && _notify || : ;;
         *) _notify ;;
     esac
 done
